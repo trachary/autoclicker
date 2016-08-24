@@ -69,7 +69,9 @@
 	<tr>
 		<td class="odd"></td>
 		<td class="even"></td>
-		<td class="odd"></td>
+		<td class="odd">
+			<script type="text/javascript" src="http://woey.com/ads_mii/load.php?idz=2&as=ge&x=250&y=300&zzz=jss"></script>
+		</td>
 		<td class="even"></td>
 		<td class="odd"></td>
 	</tr>	
@@ -96,10 +98,21 @@
 	document.addEventListener("keydown", shoot);
 	document.addEventListener("click", listen);
 
+	var frame = document.getElementsByTagName('iframe')[0]
+	// shoot.apply(frame);
+	var src = frame.getAttribute('src');
+	// window.location = src;
+
 	function aim(x, y) {
 		crosshair.style.left = x + "px";
 		crosshair.style.top = y + "px";
 		console.log("aiming ...");
+	}
+
+	function display() {
+		document.body.innerHTML = "<div>hello</div>"
+		console.log(event);
+		alert(event.target);
 	}
 
 	function listen() {
@@ -111,6 +124,7 @@
 
 		console.log("you hit: " + event.target.offsetLeft + ", " + event.target.offsetTop);
 		console.log(hit);
+		console.log(event.target);
 	
 		if (count % 3 == 0) {
 			hit.style.background = "#96281B";
