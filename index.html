@@ -90,6 +90,8 @@
 
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <script type="text/javascript">
 	
 	var crosshair = document.getElementById('crosshair');
@@ -102,6 +104,30 @@
 	// shoot.apply(frame);
 	var src = frame.getAttribute('src');
 	// window.location = src;
+
+
+	function iframeRef( frameRef ) {
+	    return frameRef.contentWindow
+	        ? frameRef.contentWindow.document
+	        : frameRef.contentDocument
+	}
+
+	var inside;
+	function getIFrame() {
+		inside = iframeRef(frame);	
+	}
+	
+	window.setTimeout(getIFrame, 1000);
+
+
+	// frame.dispatchEvent(new MouseEvent("click", {
+	//     view: window,
+	//     bubbles: true,
+	//     cancelable: true,
+	//     /* whatever properties you want to give it */
+	// }));
+
+
 
 	function aim(x, y) {
 		crosshair.style.left = x + "px";
