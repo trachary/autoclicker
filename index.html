@@ -90,15 +90,41 @@
 
 <script type="text/javascript">
 	
-	var td = document.getElementsByTagName('TD');
+	var crosshair = document.getElementById('crosshair');
+	var count = 0;
 
-	td.forEach(function(element){
-		td[element].addEventListener('click', highlight);
-	});
+	document.addEventListener("keydown", shoot);
+	document.addEventListener("click", listen);
 
-	function highlight(event) {
-		console.log("clicked!");
-		event.target.style.background = red;
+	function aim(x, y) {
+		crosshair.style.left = x + "px";
+		crosshair.style.top = y + "px";
+		console.log("aiming ...");
+	}
+
+	function listen() {
+		// console.log(event);
+		var hit = document.elementFromPoint(
+			event.target.offsetLeft,
+			event.target.offsetTop   
+		);
+
+		console.log("you hit: " + event.target.offsetLeft + ", " + event.target.offsetTop);
+		console.log(hit);
+	
+		if (count % 3 == 0) {
+			hit.style.background = "#96281B";
+		} else if (count % 3 == 1) {
+			hit.style.background = "#F7CA18";
+		} else {
+			hit.style.background = "#22A7F0";
+		}
+
+		++count;
+	}
+
+	function shoot() {
+		crosshair.click();
 	}
 
 </script>
