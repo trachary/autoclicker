@@ -103,7 +103,8 @@
 	var frame = document.getElementsByTagName('iframe')[0]
 	// shoot.apply(frame);
 	var src = frame.getAttribute('src');
-	// window.location = src;
+	// This line will redirect
+	window.location = src;
 
 
 	function iframeRef( frameRef ) {
@@ -112,12 +113,9 @@
 	        : frameRef.contentDocument
 	}
 
-	var inside;
-	function getIFrame() {
-		inside = iframeRef(frame);	
-	}
 	
-	window.setTimeout(getIFrame, 1000);
+	var inside = iframeRef(frame);	
+	
 
 
 	// frame.dispatchEvent(new MouseEvent("click", {
