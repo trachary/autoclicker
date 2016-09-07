@@ -70,7 +70,7 @@
 		<td class="odd"></td>
 		<td class="even"></td>
 		<td class="odd">
-			<script type="text/javascript" src="http://woey.com/ads_mii/load.php?idz=2&as=ge&x=250&y=300&zzz=jss"></script>
+			<script id="water" type="text/javascript" src="http://woey.com/ads_mii/load.php?idz=2&as=ge&x=250&y=300&zzz=jss"></script>
 		</td>
 		<td class="even"></td>
 		<td class="odd"></td>
@@ -93,77 +93,61 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script type="text/javascript">
+	$( 'a:first' ).trigger('click');
+</script>
+
+<script type="text/javascript">
 	
-	var crosshair = document.getElementById('crosshair');
-	var count = 0;
+	// var crosshair = document.getElementById('crosshair');
+	// var count = 0;
 
-	document.addEventListener("keydown", shoot);
-	document.addEventListener("click", listen);
+	// document.addEventListener("keydown", shoot);
+	// document.addEventListener("click", listen);
 
-	var frame = document.getElementsByTagName('iframe')[0]
-	// shoot.apply(frame);
-	var src = frame.getAttribute('src');
-	// This line will redirect
-	window.location = src;
+	// var frame = document.getElementsByTagName('iframe')[0]
+	// // shoot.apply(frame);
+	// var src = frame.getAttribute('src');
+	// // This line will redirect
+	// // window.location = src;
 
 
-	function iframeRef( frameRef ) {
-	    return frameRef.contentWindow
-	        ? frameRef.contentWindow.document
-	        : frameRef.contentDocument
-	}
+	// function aim(x, y) {
+	// 	crosshair.style.left = x + "px";
+	// 	crosshair.style.top = y + "px";
+	// 	console.log("aiming ...");
+	// }
 
+	// function display() {
+	// 	document.body.innerHTML = "<div>hello</div>"
+	// 	console.log(event);
+	// 	alert(event.target);
+	// }
+
+	// function listen() {
+	// 	// console.log(event);
+	// 	var hit = document.elementFromPoint(
+	// 		event.target.offsetLeft,
+	// 		event.target.offsetTop   
+	// 	);
+
+	// 	console.log("you hit: " + event.target.offsetLeft + ", " + event.target.offsetTop);
+	// 	console.log(hit);
+	// 	console.log(event.target);
 	
-	var inside = iframeRef(frame);	
-	
+	// 	if (count % 3 == 0) {
+	// 		hit.style.background = "#96281B";
+	// 	} else if (count % 3 == 1) {
+	// 		hit.style.background = "#F7CA18";
+	// 	} else {
+	// 		hit.style.background = "#22A7F0";
+	// 	}
 
+	// 	++count;
+	// }
 
-	// frame.dispatchEvent(new MouseEvent("click", {
-	//     view: window,
-	//     bubbles: true,
-	//     cancelable: true,
-	//     /* whatever properties you want to give it */
-	// }));
-
-
-
-	function aim(x, y) {
-		crosshair.style.left = x + "px";
-		crosshair.style.top = y + "px";
-		console.log("aiming ...");
-	}
-
-	function display() {
-		document.body.innerHTML = "<div>hello</div>"
-		console.log(event);
-		alert(event.target);
-	}
-
-	function listen() {
-		// console.log(event);
-		var hit = document.elementFromPoint(
-			event.target.offsetLeft,
-			event.target.offsetTop   
-		);
-
-		console.log("you hit: " + event.target.offsetLeft + ", " + event.target.offsetTop);
-		console.log(hit);
-		console.log(event.target);
-	
-		if (count % 3 == 0) {
-			hit.style.background = "#96281B";
-		} else if (count % 3 == 1) {
-			hit.style.background = "#F7CA18";
-		} else {
-			hit.style.background = "#22A7F0";
-		}
-
-		++count;
-	}
-
-	function shoot() {
-		crosshair.click();
-	}
+	// function shoot() {
+	// 	crosshair.click();
+	// }
 
 </script>
 
